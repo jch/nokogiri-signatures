@@ -61,9 +61,7 @@ have everything we need to verify the document. This will come up again when we
 look at how signatures are verified.
 
 ```ruby
-document.signatures.each do |sig|
-  sign.sign(:private_key => private_key, :certificate => certificate)
-end
+document.sign(:private_key => private_key, :certificate => certificate)
 ```
 
 ### Verifying signatures
@@ -72,9 +70,7 @@ Because we included the `certificate` earlier, we can verify the signature
 without specifying it again:
 
 ```ruby
-document.signatures.all? do |sig|
-  sig.verify
-end
+document.verify
 ```
 
 If a signature does not have an embedded certificate, then this example will
@@ -82,9 +78,7 @@ raise `Nokogiri::Signatures::NoCertificateError`. You may explicitly specify a
 certificate:
 
 ```ruby
-document.signatures.all? do |sig|
-  sig.verify(:certificate => certificate)
-end
+document.verify(:certificate => certificate)
 ```
 
 ## Contributing
