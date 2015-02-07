@@ -1,10 +1,11 @@
 # Nokogiri::Signatures
 
-nokogiri enhancement to support [XML digital
+nokogiri enhancements to support [XML digital
 signatures](http://www.w3.org/TR/xmldsig-core/).
 
-This gem is based upon [benoist/xmldsig](https://github.com/benoist/xmldsig),
-but mixes in the behavior into nokogiri's interface.
+[benoist/xmldsig](https://github.com/benoist/xmldsig) does the hard work of
+signing and verifying signatures. This gem provides a nokogiri friendly
+interface for signing and verifying XML documents.
 
 ## Installation
 
